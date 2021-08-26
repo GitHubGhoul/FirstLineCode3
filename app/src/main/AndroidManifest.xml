@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.hp.firstlinecode">
 
     <application
@@ -9,13 +10,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstLineCode3">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.DialogActivity"
+            android:theme="@style/transcutestyle"/>
+        <activity android:name=".activity.ThirdActivity">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SecondActivity">
+            <intent-filter>
+                <action android:name="com.wxd.firstlinecode.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.wxd.firstlinecode.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

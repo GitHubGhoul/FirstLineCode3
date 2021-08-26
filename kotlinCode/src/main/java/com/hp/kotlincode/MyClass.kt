@@ -1,5 +1,6 @@
 package com.hp.kotlincode
 
+import com.hp.kotlincode.function.doSomething
 import com.hp.kotlincode.object_oriented.Cellphone
 import com.hp.kotlincode.object_oriented.Singleton
 import com.hp.kotlincode.object_oriented.Student
@@ -13,6 +14,7 @@ fun main() {
     println(cellphone1)
     println("cellphone1 equals cellphone2 " + (cellphone1 == cellphone2))
     Singleton.singletonTest()
+    doSomething()
 }
 
 fun doStudy(study: Study?) {
