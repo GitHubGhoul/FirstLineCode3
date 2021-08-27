@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wxd.firstlinecode">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,15 +12,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstLineCode3">
-        <activity android:name=".fragment.NewsContentActivity"></activity>
-        <activity android:name=".fragment.FragmentActivity">
+        <activity android:name=".broadcast.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".uiwidget.ChatActivity"></activity>
+
+        <receiver
+            android:name=".broadcast.AnotherBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.wxd.broadcasttest.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="com.wxd.broadcasttest.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcast.BroadcastActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".fragment.NewsContentActivity" />
+        <activity android:name=".fragment.FragmentActivity" />
+        <activity android:name=".uiwidget.ChatActivity" />
         <activity android:name=".uiwidget.FruitActivity" />
         <activity
             android:name=".activity.DialogActivity"
