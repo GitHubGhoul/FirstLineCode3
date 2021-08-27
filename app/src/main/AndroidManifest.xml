@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hp.firstlinecode">
+    package="com.wxd.firstlinecode">
 
     <application
         android:allowBackup="true"
@@ -10,16 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstLineCode3">
-        <activity android:name=".uiwidget.ChatActivity">
+        <activity android:name=".fragment.NewsContentActivity"></activity>
+        <activity android:name=".fragment.FragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".uiwidget.FruitActivity">
-
-        </activity>
+        <activity android:name=".uiwidget.ChatActivity"></activity>
+        <activity android:name=".uiwidget.FruitActivity" />
         <activity
             android:name=".activity.DialogActivity"
             android:theme="@style/transcutestyle" />
@@ -40,7 +40,7 @@
                 <category android:name="com.wxd.firstlinecode.MY_CATEGORY" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.FirstActivity"></activity>
+        <activity android:name=".activity.FirstActivity" />
         <activity android:name=".MainActivity" />
     </application>
 
