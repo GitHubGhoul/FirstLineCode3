@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".datastorage.StorageActivity">
+
+    <Button
+        android:id="@+id/putSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存SP数据"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <Button
+        android:id="@+id/getSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取SP数据"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/putSP"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <Button
+        android:id="@+id/createDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/getSP"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="创建数据库"/>
+    <Button
+        android:id="@+id/insertDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createDB"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="插入数据"/>
+
+    <Button
+        android:id="@+id/updateDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/insertDB"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="更新数据"/>
+
+    <Button
+        android:id="@+id/replaceDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/updateDB"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="替换数据"/>
+
+    <Button
+        android:id="@+id/delDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/replaceDB"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="删除数据"/>
+
+    <Button
+        android:id="@+id/queryDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delDB"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="查询数据"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
