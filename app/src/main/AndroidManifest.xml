@@ -4,6 +4,7 @@
     package="com.wxd.firstlinecode">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstLineCode3">
-        <activity android:name=".datastorage.StorageActivity">
+        <provider
+            android:name=".contentprovider.DatabaseProvider"
+            android:authorities="com.wxd.database.provider"
+            android:enabled="true"
+            android:exported="true"/>
+        <activity android:name=".contentprovider.ContactsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".broadcast.LoginActivity">
-        </activity>
+        <activity android:name=".datastorage.StorageActivity"/>
+        <activity android:name=".broadcast.LoginActivity" />
 
         <receiver
             android:name=".broadcast.AnotherBroadcastReceiver"
@@ -47,8 +53,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".broadcast.BroadcastActivity">
-        </activity>
+        <activity android:name=".broadcast.BroadcastActivity" />
         <activity android:name=".fragment.NewsContentActivity" />
         <activity android:name=".fragment.FragmentActivity" />
         <activity android:name=".uiwidget.ChatActivity" />

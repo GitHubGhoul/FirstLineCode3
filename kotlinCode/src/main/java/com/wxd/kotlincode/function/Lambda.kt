@@ -1,6 +1,6 @@
 package com.wxd.kotlincode.function
 
-import com.wxd.kotlincode.lambda.getMutableListOf
+import com.wxd.kotlincode.introduction.getMutableListOf
 
 fun main() {
     val list = getMutableListOf()

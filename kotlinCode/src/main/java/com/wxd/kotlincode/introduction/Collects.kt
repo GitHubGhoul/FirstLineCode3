@@ -1,4 +1,4 @@
-package com.wxd.kotlincode.lambda
+package com.wxd.kotlincode.introduction
 
 fun main() {
     val list = getMapOf()
