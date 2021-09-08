@@ -16,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstLineCode3">
         <activity
-            android:name=".net.WebActivity"
+            android:name=".materialdesign.DetailsActivity"
+            android:theme="@style/DetailsActivityTheme"
+            android:exported="true" />
+        <activity
+            android:name=".materialdesign.ToolbarActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,13 +28,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".net.WebActivity"
+            android:exported="true" />
 
         <service
             android:name=".service.MyIntentService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".service.ServiceActivity"/>
+        <activity android:name=".service.ServiceActivity" />
 
         <service
             android:name=".service.MyService"
@@ -93,7 +100,7 @@
         <activity android:name=".uiwidget.FruitActivity" />
         <activity
             android:name=".activity.DialogActivity"
-            android:theme="@style/transcutestyle" />
+            android:theme="@style/TransparentTheme" />
         <activity android:name=".activity.ThirdActivity">
             <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW" />
