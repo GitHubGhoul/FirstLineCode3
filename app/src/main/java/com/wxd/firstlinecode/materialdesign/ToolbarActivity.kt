@@ -1,5 +1,7 @@
 package com.wxd.firstlinecode.materialdesign
 
+import android.content.Context
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,26 +14,39 @@ import com.wxd.firstlinecode.R
 import com.wxd.firstlinecode.databinding.ActivityToolbarBinding
 import com.wxd.firstlinecode.kt.showSnackbar
 import com.wxd.firstlinecode.kt.showToast
+import com.wxd.firstlinecode.skills.LogUtils
 import com.wxd.firstlinecode.uiwidget.Fruit
 import com.wxd.firstlinecode.uiwidget.FruitAdapter
 import kotlin.concurrent.thread
 
 class ToolbarActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityToolbarBinding
+    private lateinit var binding: ActivityToolbarBinding
     val fruits = mutableListOf(
-        Fruit("Apple", R.drawable.apple), Fruit("Banana",
-        R.drawable.banana), Fruit("Orange", R.drawable.orange), Fruit("Watermelon",
-        R.drawable.watermelon), Fruit("Pear", R.drawable.pear), Fruit("Grape",
-        R.drawable.grape), Fruit("Pineapple", R.drawable.pineapple), Fruit("Strawberry",
-        R.drawable.strawberry), Fruit("Cherry", R.drawable.cherry), Fruit("Mango",
-        R.drawable.mango))
+        Fruit("Apple", R.drawable.apple), Fruit(
+            "Banana",
+            R.drawable.banana
+        ), Fruit("Orange", R.drawable.orange), Fruit(
+            "Watermelon",
+            R.drawable.watermelon
+        ), Fruit("Pear", R.drawable.pear), Fruit(
+            "Grape",
+            R.drawable.grape
+        ), Fruit("Pineapple", R.drawable.pineapple), Fruit(
+            "Strawberry",
+            R.drawable.strawberry
+        ), Fruit("Cherry", R.drawable.cherry), Fruit(
+            "Mango",
+            R.drawable.mango
+        )
+    )
     val fruitList = ArrayList<Fruit>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityToolbarBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        LogUtils.e("ThemeMode", isDarkTheme(this).toString())
         setSupportActionBar(binding.toolbar)
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
@@ -43,7 +58,7 @@ class ToolbarActivity : AppCompatActivity() {
             true
         }
         binding.fab.setOnClickListener {
-            it.showSnackbar("Data deleted","Undo"){
+            it.showSnackbar("Data deleted", "Undo") {
                 "Data restored".showToast(this)
             }
         }
@@ -77,17 +92,30 @@ class ToolbarActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.toolbar, menu)
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> binding.drawerLayout.openDrawer(GravityCompat.START)
-            R.id.backup -> Toast.makeText(this, "You clicked Backup",
-                Toast.LENGTH_SHORT).show()
-            R.id.delete -> Toast.makeText(this, "You clicked Delete",
-                Toast.LENGTH_SHORT).show()
-            R.id.settings -> Toast.makeText(this, "You clicked Settings",
-                Toast.LENGTH_SHORT).show()
+            R.id.backup -> Toast.makeText(
+                this, "You clicked Backup",
+                Toast.LENGTH_SHORT
+            ).show()
+            R.id.delete -> Toast.makeText(
+                this, "You clicked Delete",
+                Toast.LENGTH_SHORT
+            ).show()
+            R.id.settings -> Toast.makeText(
+                this, "You clicked Settings",
+                Toast.LENGTH_SHORT
+            ).show()
         }
         return true
+    }
+
+    fun isDarkTheme(context: Context): Boolean {
+        val flag = context.resources.configuration.uiMode and
+                Configuration.UI_MODE_NIGHT_MASK
+        return flag == Configuration.UI_MODE_NIGHT_YES
     }
 
 }
