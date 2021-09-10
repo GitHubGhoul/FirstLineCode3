@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".jetpack.VMActivity">
+
+    <TextView
+        android:id="@+id/show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击计数"
+        app:layout_constraintTop_toBottomOf="@id/show"/>
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除"
+        app:layout_constraintTop_toBottomOf="@id/add"/>
+
+    <Button
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get user"
+        app:layout_constraintTop_toBottomOf="@id/clear"/>
+
+    <Button
+        android:id="@+id/addData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add data"
+        app:layout_constraintTop_toBottomOf="@id/user"/>
+
+    <Button
+        android:id="@+id/updateData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update data"
+        app:layout_constraintTop_toBottomOf="@id/addData"/>
+
+    <Button
+        android:id="@+id/deleteData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="delete data"
+        app:layout_constraintTop_toBottomOf="@id/updateData"/>
+
+    <Button
+        android:id="@+id/queryData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="query data"
+        app:layout_constraintTop_toBottomOf="@id/deleteData"/>
+
+    <Button
+        android:id="@+id/doWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="do work"
+        app:layout_constraintTop_toBottomOf="@id/queryData"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
